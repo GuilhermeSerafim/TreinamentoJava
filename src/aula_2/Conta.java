@@ -23,25 +23,33 @@ public class Conta {
 		System.out.println("Conta criado");
 		System.out.println("Data abertura: " + this.dataAbertura);
 	}
-	
-	//metodos
+
+	// metodos
 	// sacar
-	public void sacar(double valor) {
+	public boolean sacar(double valor) {
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
+			return true;
 		}
+		return false;
 	}
 
 	// depositar
 	public void depositar(double valor) {
 		this.saldo += valor;
 	}
-	
+
 	// consultar saldo
 	public void exibirSaldo() {
 		System.out.println(this.cliente.nomeTitular + " - Saldo: " + this.saldo);
 	}
-	
-	// transferir
 
+	// transferir
+	public void transferir(Conta conta, double valor) {
+		boolean teste = this.sacar(valor);
+		if (teste == true) {
+			conta.depositar(valor);
+		}
+
+	}
 }
