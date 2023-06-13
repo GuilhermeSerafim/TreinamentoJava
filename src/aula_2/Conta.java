@@ -5,11 +5,11 @@ import java.sql.Date;
 public class Conta {
 
 	// atributos
-	int numeroConta, agencia;
-	String senha;
-	Date dataAbertura;
-	double saldo;
-	Cliente cliente;
+	private int numeroConta, agencia;
+	private String senha;
+	private Date dataAbertura;
+	private double saldo;
+	private Cliente cliente; //composição
 
 	// construtor
 	public Conta(Cliente cliente, int numeroConta, int agencia, String senha) {
@@ -41,7 +41,7 @@ public class Conta {
 
 	// consultar saldo
 	public void exibirSaldo() {
-		System.out.println(this.cliente.nomeTitular + " - Saldo: " + this.saldo);
+		System.out.println(this.cliente.getNomeTitular() + " - Saldo: " + this.saldo);
 	}
 
 	// transferir
