@@ -4,6 +4,10 @@ public class TesteConta {
 
 	public static void main(String[] args) {
 		
+		CDB cdb = new CDB();
+		LCI lci = new LCI();
+		LCA lca = new LCA();
+		
 		Cliente gui = new Cliente("Gui", "123456789", "123456789", "Rua 1234");
 		Cliente gaby = new Cliente("Gaby", "987654321", "987654321", "Rua 4321");
 		ContaCorrente contaGui = new ContaCorrente(gui, 1, 1, "teste");
@@ -15,6 +19,8 @@ public class TesteConta {
 		
 		contaGui.exibirSaldo();
 		contaGaby.exibirSaldo();
+		
+		contaGui.investimento(lca, 10);
 		
 		contaGui.sacar(50);
 		contaGaby.sacar(1000);
