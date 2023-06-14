@@ -20,7 +20,7 @@ public abstract class Conta {
 		this.agencia = agencia;
 		this.dataAbertura = new Date(System.currentTimeMillis());
 		this.senha = senha;
-
+		contador++;
 		System.out.println("Conta criado");
 		System.out.println("Data abertura: " + this.dataAbertura);
 	}

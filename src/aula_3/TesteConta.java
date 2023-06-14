@@ -31,6 +31,8 @@ public class TesteConta {
 		
 		contaGui.exibirSaldo();
 		contaGaby.exibirSaldo();
+		
+		Conta.exibirContador();
 	}
 
 }
