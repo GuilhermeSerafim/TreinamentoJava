@@ -8,7 +8,7 @@ public class ContaCorrente extends Conta {
 		super(cliente, numeroConta, agencia, senha);
 
 	}
-	
+
 	public void exibirSaldo() {
 		double saldoTotal = this.saldo + this.saldoInvestimento;
 		System.out.println("Cliente: " + this.cliente.getNomeTitular());
@@ -18,5 +18,19 @@ public class ContaCorrente extends Conta {
 		System.out.println("Saldo total: R$ " + saldoTotal + "\n");
 	}
 
+	public void investir(double valor, String tipo) {
+		if (tipo == "CDB") {
+			double rendimento = valor * 0.1375;
+			double capital = valor + rendimento;
+			saldoInvestimento += capital;
+		} else if (tipo == "LCA") {
+			double rendimento = valor * 0.09;
+			double capital = valor + rendimento;
+			saldoInvestimento += capital;
+		} else if (tipo == "LCI") {
+			double rendimento = valor * 0.095;
+			double capital = valor + rendimento;
+			saldoInvestimento += capital;	
+		}
+	}
 }
-
