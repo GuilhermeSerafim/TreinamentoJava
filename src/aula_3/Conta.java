@@ -10,6 +10,7 @@ public abstract class Conta {
 	protected Date dataAbertura;
 	protected double saldo;
 	protected Cliente cliente; // composição
+	private static long contador; // "visualização dos objetos que somem"
 
 	// construtor
 	public Conta(Cliente cliente, int numeroConta, int agencia, String senha) {
@@ -43,8 +44,8 @@ public abstract class Conta {
 
 	// consultar saldo
 	public abstract void exibirSaldo();
-	//abstract no método força a reescrita.
-	
+	// abstract no método força a reescrita.
+
 	// transferir
 	public void transferir(Conta conta, double valor) {
 		boolean teste = this.sacar(valor);
@@ -52,5 +53,8 @@ public abstract class Conta {
 			conta.depositar(valor);
 		}
 
+	}
+	public static void exibirContador() {
+		System.out.println("Contas: " + contador);
 	}
 }
