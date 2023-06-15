@@ -20,7 +20,7 @@ public class Cliente {
 		this.dataNasc = formato.parse(dataNasc); 
 	}
 
-	// getters / setters
+	// métodos getters(ler) / setters(escrever)
 	public String getNomeTitular() {
 		return nomeTitular;
 	}
