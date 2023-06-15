@@ -1,15 +1,17 @@
 package aula_3;
 
+import java.text.ParseException;
+
 public class Executavel {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
 		CDB cdb = new CDB();
 		LCI lci = new LCI();
 		LCA lca = new LCA();
 		
-		Cliente gui = new Cliente("Gui", "123456789", "123456789", "Rua 1234");
-		Cliente gaby = new Cliente("Gaby", "987654321", "987654321", "Rua 4321");
+		Cliente gui = new Cliente("Gui", "123456789", "123456789", "Rua 1234", "07/07/2004");
+		Cliente gaby = new Cliente("Gaby", "987654321", "987654321", "Rua 4321", "26/07/2004");
 		ContaCorrente contaGui = new ContaCorrente(gui, 1, 1, "teste");
 		ContaCorrente contaGaby = new ContaCorrente(gaby, 2, 1, "teste");
 		
