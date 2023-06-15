@@ -1,22 +1,23 @@
 package aula_3;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 //javabeans
 public class Cliente {
 
 	// atributos
 	private String nomeTitular, cpfTitular, enderecoTitular, senhaTitular;
-
-	// construtor vazio
-	public Cliente() {
-
-	}
+	private final Date dataNasc; //transforma a variavel em constante
 
 	// construtor
-	public Cliente(String nomeTitular, String cpfTitular, String enderecoTitular, String senhaTitular) {
+	public Cliente(String nomeTitular, String cpfTitular, String enderecoTitular, String senhaTitular, String dataNasc) throws ParseException {
 		this.nomeTitular = nomeTitular;
 		this.cpfTitular = cpfTitular;
 		this.enderecoTitular = enderecoTitular;
 		this.senhaTitular = senhaTitular;
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		this.dataNasc = formato.parse(dataNasc); 
 	}
 
 	// getters / setters
