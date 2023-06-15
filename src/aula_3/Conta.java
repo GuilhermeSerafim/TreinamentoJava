@@ -1,6 +1,6 @@
 package aula_3;
 
-import java.sql.Date;
+import java.util.Date;
 
 public abstract class Conta {
 
