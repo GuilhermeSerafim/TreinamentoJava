@@ -15,10 +15,20 @@ public abstract class TryCatch {
 				} else
 					lista[3] = 4;
 			} catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
-				System.out.println("Exceção: " + e);
+				System.out.println("Excecao: " + e);
 			}
 			System.out.println("i = " + i);
 			System.out.println("res = " + res);
+		}
+		
+		System.out.println("-----------");
+		
+		try {
+			System.out.println(10/0);
+		} catch (Exception e) {
+			System.out.println(2);
+		} finally {
+			System.out.println(3);
 		}
 
 	}
