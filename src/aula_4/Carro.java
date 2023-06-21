@@ -2,21 +2,35 @@ package aula_4;
 
 /**
  * 
- * @author Felipi 
- * @author Guilherme 
+ * @author Felipi
+ * @author Guilherme
  * @author Ikram
  * @author Isabelle
- * @author Miguel 
+ * @author Miguel
  *
  */
 
 public class Carro extends Veiculo {
 
-	public Carro(String marca, String cor, String modelo, String anoDeFabrica,
-			int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao) {
+	private double qtdNoTanque;
+	private double rendimentoTotal;
+
+	public void abastecimento(Combustivel comb, double qtd) {
+		if (qtdNoTanque + qtd < 50) {
+			qtdNoTanque += qtd;
+			rendimentoTotal += comb.abastecer(qtd);
+		}
+	}
+
+	
+	/*public Carro(String marca, String cor, String modelo, String anoDeFabrica, int limiteMaximo, Motor motor, Roda roda,
+			Transmissao transmissao) {
 		super(marca, cor, modelo, anoDeFabrica, limiteMaximo, motor, roda, transmissao);
 		// TODO Auto-generated constructor stub
-	}
+	}*/
+
+
+	
 
 	@Override
 	public boolean acelerar(int qtdParaAcelerar, boolean ligadoDesligado, int velocidadeAtual) {
@@ -62,10 +76,31 @@ public class Carro extends Veiculo {
 	public void mostrarDados() {
 		System.out.println("\nExibindo dados do carro: ");
 		System.out.println("----------------------------------------------------------");
-		System.out.println("\nMarca - " + this.getMarca() + "\nModelo - " + this.getModelo() + "\nCor - " + this.getCor() 
-		+ "\nAno de fabricacao - "	+ this.anoDeFabrica + "\nVelocidade maxima - " + this.getLimiteMaximo() + "Km/h" + motor + roda + transmissao);
+		System.out.println("\nMarca - " + this.getMarca() + "\nModelo - " + this.getModelo() + "\nCor - "
+				+ this.getCor() + "\nAno de fabricacao - " + this.anoDeFabrica + "\nVelocidade maxima - "
+				+ this.getLimiteMaximo() + "Km/h" + motor + roda + transmissao);
 		System.out.println("\n-----------------------------------------");
 	}
+
+	public double getQtdNoTanque() {
+		return qtdNoTanque;
+	}
+
+
+	public void setQtdNoTanque(double qtdNoTanque) {
+		this.qtdNoTanque = qtdNoTanque;
+	}
+
+
+	public double getRendimentoTotal() {
+		return rendimentoTotal;
+	}
+
+
+	public void setRendimentoTotal(double rendimentoTotal) {
+		this.rendimentoTotal = rendimentoTotal;
+	}
+
 
 	@Override
 	public boolean verificarSeEstaLigado(boolean valor) {
@@ -74,5 +109,8 @@ public class Carro extends Veiculo {
 		}
 		return false;
 	}
+	
+	// Getters e Setters
+	
 
 }

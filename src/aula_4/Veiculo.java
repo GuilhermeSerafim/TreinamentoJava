@@ -34,6 +34,10 @@ public abstract class Veiculo {
 		this.roda = roda;
 		this.transmissao = transmissao;
 	}
+	
+	public Veiculo() {
+		
+	}
 
 	// Getters e Setters
 	public String getMarca() {
