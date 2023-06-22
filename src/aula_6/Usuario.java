@@ -81,6 +81,7 @@ public class Usuario {
 			System.out.println(usuario[i].getNome());
 			System.out.println("Data de cadastro: " + dateFormat.format(usuario[i].getDataCadastro()));
 			System.out.println("-----------");
+			// Por algum motivo meus gets não estão puxando
 		}
 	}
 
