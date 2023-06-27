@@ -1,8 +1,5 @@
 package aula_7;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Usuario implements Comparable<Usuario> {
 	private int idUsuario;
 	private String nome, senha;
