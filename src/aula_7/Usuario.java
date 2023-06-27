@@ -1,9 +1,12 @@
 package aula_7;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Usuario implements Comparable<Usuario> {
 	private int idUsuario;
 	private String nome, senha;
-
+	
 	public Usuario(int idUsuario, String nome, String senha) {
 		// super(); Uso apenas se quiser contruir o construtor da classe mãe (herança)
 		this.idUsuario = idUsuario;

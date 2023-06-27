@@ -2,7 +2,10 @@ package aula_7;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 public class Teste {
 
@@ -38,6 +41,14 @@ public class Teste {
 		for(Usuario usuario: listaUsuarios) {
 			System.out.println("ID: "+usuario.getIdUsuario() + " - " + usuario.getNome());
 		}
+		
+		Map mapa = new HashMap();
+		
+		mapa.put("Pedro", pedro);
+		
+		Object objeto = mapa.get("Pedro");
+		Usuario usuario = (Usuario) objeto;
+		System.out.println("Objeto chave: " + usuario.getNome());
 	}
 
 }
