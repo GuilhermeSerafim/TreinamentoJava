@@ -1,6 +1,7 @@
 package aula_7;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Teste {
@@ -9,10 +10,10 @@ public class Teste {
 		
 		//Objetos tipo Usuario
 		Usuario emerson = new Usuario(1, "Emerson", "abc");
-		Usuario adriane = new Usuario(1, "Adriane", "abc");
-		Usuario maria = new Usuario(1, "Maria", "abc");
-		Usuario joao = new Usuario(1, "Joao", "abc");
-		Usuario pedro = new Usuario(1, "Pedro", "abc");
+		Usuario adriane = new Usuario(2, "Adriane", "abc");
+		Usuario maria = new Usuario(3, "Maria", "abc");
+		Usuario joao = new Usuario(4, "Joao", "abc");
+		Usuario pedro = new Usuario(5, "Pedro", "abc");
 		
 		//Collection
 		List<Usuario> listaUsuarios = new ArrayList<Usuario>();
@@ -24,8 +25,18 @@ public class Teste {
 		listaUsuarios.add(adriane);
 		listaUsuarios.add(emerson);
 		
+		//Iterando a lista ordenada
 		for(Usuario usuario: listaUsuarios) {
-			System.out.println(usuario.getNome());
+			System.out.println("ID: "+usuario.getIdUsuario() + " - " + usuario.getNome());
+		}
+		
+		//Ordenar a lista conforme regra defina no compareTo
+		Collections.sort (listaUsuarios);
+		
+		System.out.println("--------------------------------");
+		
+		for(Usuario usuario: listaUsuarios) {
+			System.out.println("ID: "+usuario.getIdUsuario() + " - " + usuario.getNome());
 		}
 	}
 
